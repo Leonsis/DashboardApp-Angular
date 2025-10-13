@@ -1,0 +1,116 @@
+/* Layout com sidebar e navbar */
+.main-content {
+  margin-left: 250px;
+  margin-top: 60px;
+  min-height: calc(100vh - 60px);
+  background-color: #f8f9fa;
+  transition: margin-left 0.3s ease;
+}
+
+/* Esconder botão mobile em telas grandes */
+.mobile-toggle-btn {
+  display: none;
+}
+
+/* Quando sidebar está colapsada */
+.sidebar.collapsed ~ .main-content {
+  margin-left: 60px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0 !important;
+    margin-top: 60px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .sidebar.collapsed ~ .main-content {
+    margin-left: 0 !important;
+  }
+  
+  /* Ajustar card para mobile */
+  .card {
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .card-text {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .alert {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+  
+  .alert h4 {
+    font-size: 1.1rem;
+  }
+  
+  /* Botão de toggle para mobile */
+  .mobile-toggle-btn {
+    display: block;
+    position: fixed;
+    top: 75px;
+    left: 15px;
+    z-index: 1001;
+    background: #26252d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-toggle-btn:hover {
+    background: #3a3942;
+    transform: scale(1.05);
+  }
+  
+  .mobile-toggle-btn:active {
+    transform: scale(0.95);
+  }
+  
+  /* Botão mais visível quando sidebar está aberto */
+  .sidebar.collapsed ~ .main-content .mobile-toggle-btn {
+    background: #dc3545;
+  }
+  
+  .sidebar.collapsed ~ .main-content .mobile-toggle-btn:hover {
+    background: #c82333;
+  }
+}
+
+/* Estilos para o card do dashboard */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.card-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.alert {
+  border-radius: 8px;
+  border: none;
+}

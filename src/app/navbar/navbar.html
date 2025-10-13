@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo CREF/ES -->
+    <div class="navbar-brand">
+      <i class="fa-solid fa-globe"></i> <span>CREF/ES</span>
+    </div>
+
+    <!-- Barra de Pesquisa -->
+    <div class="navbar-search">
+      <div class="search-container">
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery" 
+          (keyup.enter)="onSearch()"
+          placeholder="Pesquisar..."
+          class="search-input"
+        >
+        <button (click)="onSearch()" class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Login do Usuário -->
+    <div class="navbar-user">
+      <div class="user-info">
+        <i class="fa-solid fa-user"></i>
+        <span class="user-name">{{ user.name }}</span>
+        <button (click)="onLogin()" class="login-btn">
+          <i class="fas fa-sign-in-alt"></i>
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

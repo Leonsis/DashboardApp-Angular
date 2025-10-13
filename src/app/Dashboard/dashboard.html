@@ -1,15 +1,29 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title text-primary">{{ title }}</h1>
-                    <p class="card-text">{{ welcomeMessage }}</p>
-                    <div class="alert alert-success" role="alert">
-                        <h4 class="alert-heading">Login realizado com sucesso!</h4>
-                        <p>Você foi redirecionado para o dashboard após o login.</p>
-                        <hr>
-                        <p class="mb-0">Agora você pode acessar todas as funcionalidades do sistema.</p>
+<!-- Navbar -->
+<app-navbar></app-navbar>
+
+<!-- Sidebar -->
+<app-sidebar></app-sidebar>
+
+<!-- Main Content -->
+<div class="main-content">
+    <!-- Botão de toggle para mobile -->
+    <button class="mobile-toggle-btn" (click)="toggleSidebar()" [title]="'Abrir/Fechar Menu'">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-primary">{{ title }}</h1>
+                        <p class="card-text">{{ welcomeMessage }}</p>
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">Login realizado com sucesso!</h4>
+                            <p>Você foi redirecionado para o dashboard após o login.</p>
+                            <hr>
+                            <p class="mb-0">Agora você pode acessar todas as funcionalidades do sistema.</p>
+                        </div>
                     </div>
                 </div>
             </div>

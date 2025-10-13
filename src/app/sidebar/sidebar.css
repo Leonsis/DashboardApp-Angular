@@ -1,0 +1,311 @@
+.sidebar {
+  width: 250px;
+  height: calc(100vh - 60px);
+  background: #26252d;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-header {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.menu-item {
+  margin: 0;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.menu-link:hover {
+  background-color: rgba(255,255,255,0.1);
+  border-left-color: #fff;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-link i {
+  width: 20px;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.menu-link span {
+  font-weight: 500;
+}
+
+/* Estilizar scrollbar */
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.menu-title {
+  padding: 10px;
+  font-size: 19px;
+}
+
+.menu-title h3 {
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+
+/* Esconder barra de pesquisa mobile em telas grandes */
+.sidebar-search-mobile {
+  display: none;
+}
+
+/* Esconder textos quando sidebar está colapsado (apenas desktop) */
+@media (min-width: 769px) {
+  .sidebar.collapsed .sidebar-title {
+    display: none;
+  }
+
+  .sidebar.collapsed .menu-title {
+    display: none;
+  }
+
+  .sidebar.collapsed .menu-link span {
+    display: none;
+  }
+
+  /* Ajustar ícones quando colapsado */
+  .sidebar.collapsed .menu-link {
+    justify-content: center;
+    padding: 15px 10px;
+  }
+
+  .sidebar.collapsed .menu-link i {
+    margin-right: 0;
+  }
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 250px;
+    height: calc(100vh - 60px);
+    top: 60px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .sidebar.collapsed {
+    width: 250px;
+    transform: translateX(0);
+  }
+  
+  /* Esconder botão toggle do sidebar no mobile */
+  .sidebar .toggle-btn {
+    display: none;
+  }
+  
+  /* Garantir que textos apareçam no mobile */
+  .sidebar .sidebar-title {
+    display: block !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    z-index: 10;
+    text-align: right;
+    line-height: 1.3;
+    white-space: nowrap;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .sidebar .menu-title {
+    display: block !important;
+  }
+  
+  .sidebar .menu-link span {
+    display: inline !important;
+  }
+  
+  .sidebar .menu-link {
+    justify-content: flex-start !important;
+    padding: 15px 20px !important;
+    white-space: nowrap;
+  }
+  
+  .sidebar .menu-link i {
+    margin-right: 15px !important;
+    flex-shrink: 0;
+  }
+  
+  /* Overlay para mobile */
+  .sidebar.collapsed::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Ajustar conteúdo principal para mobile */
+  .main-content {
+    margin-left: 0 !important;
+  }
+  
+  /* Ajustar padding dos itens no mobile */
+  .menu-link {
+    padding: 15px 20px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Ajustar header do sidebar no mobile */
+  .sidebar-header {
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Títulos mais legíveis no mobile */
+  .menu-title h3 {
+    font-size: 18px;
+  }
+  
+  .sidebar-title {
+    font-size: 1.3rem;
+  }
+  
+  /* Garantir que todos os itens sejam visíveis */
+  .menu-item {
+    display: block;
+    width: 100%;
+  }
+  
+  /* Barra de pesquisa mobile no sidebar */
+  .sidebar-search-mobile {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .search-container-mobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 25px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-container-mobile:focus-within {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+  }
+  
+  .search-input-mobile {
+    flex: 1;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    padding: 5px 10px;
+  }
+  
+  .search-btn-mobile {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    position: relative;
+    right: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-btn-mobile:hover {
+    background: rgba(255,255,255,0.2);
+  }
+}
