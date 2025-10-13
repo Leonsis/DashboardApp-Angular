@@ -1,0 +1,27 @@
+<div class="chart-container">
+  <div class="chart-header">
+    <h3 class="chart-title">{{ title }}</h3>
+  </div>
+  
+  <div class="chart-body">
+    <div class="donut-chart">
+      <div class="donut-chart-inner">
+        <div class="donut-chart-center">
+          <div class="donut-chart-value">{{ data.total }}</div>
+          <div class="donut-chart-label">Total</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="donut-chart-legend">
+      <div *ngFor="let item of data.items" class="legend-item">
+        <div class="legend-color" [style.background-color]="item.color"></div>
+        <div class="legend-info">
+          <span class="legend-label">{{ item.label }}</span>
+          <span class="legend-value">{{ item.value }}</span>
+        </div>
+        <div class="legend-percentage">{{ item.percentage }}%</div>
+      </div>
+    </div>
+  </div>
+</div>

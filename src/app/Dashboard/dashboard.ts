@@ -6,10 +6,12 @@ import { TotalFiscalizationsComponent } from '../components/total-fiscalizations
 import { CompletedFiscalizationsComponent } from '../components/completed-fiscalizations/completed-fiscalizations';
 import { PendingFiscalizationsComponent } from '../components/pending-fiscalizations/pending-fiscalizations';
 import { MonthlyGoalComponent } from '../components/monthly-goal/monthly-goal';
+import { DonutChartComponent } from '../components/donut-chart/donut-chart';
+import { GaugeChartComponent } from '../components/gauge-chart/gauge-chart';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, SidebarComponent, NavbarComponent, TotalFiscalizationsComponent, CompletedFiscalizationsComponent, PendingFiscalizationsComponent, MonthlyGoalComponent],
+  imports: [CommonModule, SidebarComponent, NavbarComponent, TotalFiscalizationsComponent, CompletedFiscalizationsComponent, PendingFiscalizationsComponent, MonthlyGoalComponent, DonutChartComponent, GaugeChartComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

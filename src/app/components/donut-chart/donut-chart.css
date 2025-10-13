@@ -1,0 +1,187 @@
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.chart-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.chart-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Gráfico de Rosca */
+.donut-chart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.donut-chart-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #28a745 0deg 288deg,
+    #dc3545 288deg 331deg,
+    #ffc107 331deg 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.donut-chart-inner::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.donut-chart-center {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.donut-chart-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1;
+}
+
+.donut-chart-label {
+  font-size: 12px;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+/* Legenda */
+.donut-chart-legend {
+  width: 100%;
+  max-width: 300px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f8f9fa;
+  gap: 12px;
+}
+
+.legend-item:last-child {
+  border-bottom: none;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.legend-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legend-label {
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.legend-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.legend-percentage {
+  font-size: 12px;
+  color: #6c757d;
+  font-weight: 600;
+  background: #f8f9fa;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 20px;
+  }
+  
+  .donut-chart {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .donut-chart-inner::before {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .donut-chart-value {
+    font-size: 20px;
+  }
+  
+  .legend-item {
+    padding: 10px 0;
+  }
+  
+  .legend-label, .legend-value {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .chart-container {
+    padding: 16px;
+  }
+  
+  .donut-chart {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .donut-chart-inner::before {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .donut-chart-value {
+    font-size: 18px;
+  }
+  
+  .chart-title {
+    font-size: 16px;
+  }
+}
