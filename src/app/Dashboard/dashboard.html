@@ -11,22 +11,39 @@
         <i class="fas fa-bars"></i>
     </button>
     
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title text-primary">{{ title }}</h1>
-                        <p class="card-text">{{ welcomeMessage }}</p>
-                        <div class="alert alert-success" role="alert">
-                            <h4 class="alert-heading">Login realizado com sucesso!</h4>
-                            <p>Você foi redirecionado para o dashboard após o login.</p>
-                            <hr>
-                            <p class="mb-0">Agora você pode acessar todas as funcionalidades do sistema.</p>
+        <div class="container-fluid">
+            <!-- Métricas Cards -->
+            <div class="row mb-4">
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <app-total-fiscalizations></app-total-fiscalizations>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <app-completed-fiscalizations></app-completed-fiscalizations>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <app-pending-fiscalizations></app-pending-fiscalizations>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <app-monthly-goal></app-monthly-goal>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title text-primary">{{ title }}</h1>
+                            <p class="card-text">{{ welcomeMessage }}</p>
+                            <div class="alert alert-success" role="alert">
+                                <h4 class="alert-heading">Login realizado com sucesso!</h4>
+                                <p>Você foi redirecionado para o dashboard após o login.</p>
+                                <hr>
+                                <p class="mb-0">Agora você pode acessar todas as funcionalidades do sistema.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>

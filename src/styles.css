@@ -7,19 +7,28 @@
   body {
     overflow-x: hidden;
   }
-  
+
   .container-fluid {
     padding-left: 10px;
     padding-right: 10px;
+    max-width: 100%;
   }
-  
+
   .row {
     margin-left: 0;
     margin-right: 0;
+    max-width: 100%;
   }
-  
-  .col-12 {
+
+  .col-12, .col-sm-12 {
     padding-left: 0;
     padding-right: 0;
+    max-width: 100%;
+  }
+  
+  /* Garantir que os cartões não quebrem o layout */
+  .metric-card {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
