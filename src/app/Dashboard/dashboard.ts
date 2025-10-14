@@ -8,10 +8,12 @@ import { PendingFiscalizationsComponent } from '../components/pending-fiscalizat
 import { MonthlyGoalComponent } from '../components/monthly-goal/monthly-goal';
 import { DonutChartComponent } from '../components/donut-chart/donut-chart';
 import { GaugeChartComponent } from '../components/gauge-chart/gauge-chart';
+import { LastFiscalizationsComponent } from '../components/last-fiscalizations/last-fiscalizations';
+import { NextFiscalizationsComponent } from '../components/next-fiscalizations/next-fiscalizations';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, SidebarComponent, NavbarComponent, TotalFiscalizationsComponent, CompletedFiscalizationsComponent, PendingFiscalizationsComponent, MonthlyGoalComponent, DonutChartComponent, GaugeChartComponent],
+  imports: [CommonModule, SidebarComponent, NavbarComponent, TotalFiscalizationsComponent, CompletedFiscalizationsComponent, PendingFiscalizationsComponent, MonthlyGoalComponent, DonutChartComponent, GaugeChartComponent, LastFiscalizationsComponent, NextFiscalizationsComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

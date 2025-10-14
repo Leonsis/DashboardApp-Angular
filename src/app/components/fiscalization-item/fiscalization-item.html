@@ -1,0 +1,31 @@
+<div class="fiscalization-item" *ngIf="item">
+  <div class="fiscalization-item-header">
+    <div class="fiscalization-item-title">
+      <h4>{{ item.responsible }}</h4>
+      <span class="fiscalization-item-municipality">{{ item.municipality }}</span>
+    </div>
+    <div class="fiscalization-item-status">
+      <span [class]="getStatusClass(item.status)">{{ item.statusText }}</span>
+    </div>
+  </div>
+  
+  <div class="fiscalization-item-body">
+    <div class="fiscalization-item-info">
+      <div class="info-item">
+        <i class="fas fa-calendar"></i>
+        <span>{{ item.visitDate }}</span>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-tag"></i>
+        <span>{{ item.type }}</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="fiscalization-item-footer">
+    <button class="access-btn" (click)="onAccessClick()">
+      <i class="fas fa-external-link-alt"></i>
+      Acessar
+    </button>
+  </div>
+</div>

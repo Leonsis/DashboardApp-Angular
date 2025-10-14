@@ -1,0 +1,32 @@
+<div class="fiscalization-list">
+  <div class="fiscalization-list-header">
+    <h3 class="fiscalization-list-title">{{ title }}</h3>
+  </div>
+  
+  <div class="fiscalization-list-body">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading-container">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Carregando...</p>
+      </div>
+    </div>
+    
+    <!-- Content State -->
+    <div *ngIf="!loading" class="fiscalization-list-content">
+      <div *ngIf="items.length === 0" class="empty-state">
+        <i class="fas fa-inbox"></i>
+        <p>Nenhuma fiscalização encontrada</p>
+      </div>
+      
+      <div *ngIf="items.length > 0" class="fiscalization-list-items">
+        <div *ngFor="let item of items" class="fiscalization-list-item">
+          <app-fiscalization-item 
+            [item]="item" 
+            (onAccess)="onFiscalizationAccess($event)">
+          </app-fiscalization-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

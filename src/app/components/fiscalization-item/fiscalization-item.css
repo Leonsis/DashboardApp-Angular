@@ -1,0 +1,150 @@
+.fiscalization-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.fiscalization-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border-color: #007bff;
+}
+
+.fiscalization-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.fiscalization-item-title h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+}
+
+.fiscalization-item-municipality {
+  font-size: 14px;
+  color: #6c757d;
+  display: block;
+}
+
+.fiscalization-item-status {
+  text-align: right;
+}
+
+.fiscalization-item-status span {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pending {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.status-in-progress {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  border: 1px solid rgba(0, 123, 255, 0.3);
+}
+
+.status-completed {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.status-cancelled {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.fiscalization-item-body {
+  margin-bottom: 20px;
+}
+
+.fiscalization-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.info-item i {
+  width: 16px;
+  text-align: center;
+  color: #007bff;
+}
+
+.fiscalization-item-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.access-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.access-btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.access-btn i {
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fiscalization-item {
+    padding: 15px;
+  }
+  
+  .fiscalization-item-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .fiscalization-item-status {
+    text-align: left;
+  }
+  
+  .fiscalization-item-info {
+    gap: 8px;
+  }
+  
+  .info-item {
+    font-size: 13px;
+  }
+}
